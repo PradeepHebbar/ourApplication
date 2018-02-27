@@ -1,0 +1,13 @@
+{
+  "name": "website-using-express",
+  "version": "0.0.1",
+  "main": "server.js",
+  "scripts": {
+    "start": "node Login.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "latest",
+    "request": "^2.83.0"
+  }
+}
