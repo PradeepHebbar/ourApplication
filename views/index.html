@@ -22,16 +22,23 @@
 </nav>
 </div>
 </br>
-<form>
-    <header>Login</header>
-    <label>Username <span>*</span></label>
-    <input/>
-    <div class="help">At least 6 character</div>
-    <label>Password <span>*</span></label>
-    <input/>
-    <div class="help">Use upper and lowercase lettes as well</div>
-    <button>Login</button>
-  </form>
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button type='button'>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input type="text" id="username" placeholder="username"/>
+      <input type="password" id="password" placeholder="password"/>
+      <button type='button' id="submit">login</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
 </div>
 </body>
 </html>

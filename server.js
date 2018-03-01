@@ -7,7 +7,7 @@ var pathResolver = require('path');
 var httpRequest = require('request');
 var loginHelper = require('./main/Login.js');
 
-app.use(express.static(__dirname+ '/views'));
+app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -30,7 +30,7 @@ router.post("/login", function (req, res) {
     password: req.body.password
   }
   loginHelper.login(request, (response) => {
-    res.send(response);
+    res.send({ "message": "suceess" });
   })
 });
 
