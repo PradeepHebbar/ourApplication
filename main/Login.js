@@ -1,22 +1,24 @@
 var httpRequest = require('request');
 
 const Login = (request, callback) => {
-    var auth = `Basic ${Buffer.from(`${request.user_name}:${request.password}`).toString('base64')}`;
+    var userName = request.body.user_name;
+    var password = request.body.password;
+    console.log("Username: " + userName + " Password: " + password);
+    var auth = `Basic ${Buffer.from(`${userName}:${password}`).toString('base64')}`;
     httpRequest.get({
         url: 'https://api.github.com/',
         headers: {
             "Authorization": auth,
-            'User-Agent': 'https://api.github.com/meta'
+             'User-Agent': 'https://api.github.com/meta'
         }
     }, function (err, res, body) {
         if (err) {
-            callback(err)
-        }
-        if (res.statusCode == 200) {
-            console.log(body)
-            callback(body)
-
-        }
+            console.log("Login Failed!!!!")
+            callback(err, null)
+        }else{
+            var result = {statusCode : res.statusCode,body:res.body}
+            callback(err,result);
+    }
     });
 }
 
